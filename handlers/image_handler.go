@@ -1,3 +1,4 @@
+/*Package for HTTP handlers*/
 package handlers
 
 import (

@@ -1,3 +1,4 @@
+/*Package with helper functions for project*/
 package utils
 
 import (
