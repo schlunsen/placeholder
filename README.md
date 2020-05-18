@@ -6,7 +6,7 @@ Image placeholder service written in go
 ## Usage
 
 ```
-go get github.com/hoisie/web
+go get github.com/schlunsen/placeholder
 ```
     
 compile the program

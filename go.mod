@@ -1,4 +1,4 @@
-module github.com/schlunsen/imageplaceholder
+module github.com/schlunsen/placeholder
 
 go 1.14
 
