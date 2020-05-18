@@ -17,15 +17,11 @@ package cmd
 
 import (
 	"fmt"
-	"log"
-	"net/http"
 	"os"
 
-	"github.com/julienschmidt/httprouter"
 	"github.com/spf13/cobra"
 
 	homedir "github.com/mitchellh/go-homedir"
-	"github.com/schlunsen/placeholder/handlers"
 	"github.com/spf13/viper"
 )
 
@@ -34,13 +30,9 @@ var cfgFile string
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
 	Use:   "placeholder",
-	Short: "A brief description of your application",
-	Long: `A longer description that spans multiple lines and likely contains
-examples and usage of using your application. For example:
-
-Cobra is a CLI library for Go that empowers applications.
-This application is a tool to generate the needed files
-to quickly create a Cobra application.`,
+	Short: "A placeholder service for images",
+	Long: `A placeholder service for images
+	`,
 	// Uncomment the following line if your bare application
 	// has an action associated with it:
 	//	Run: func(cmd *cobra.Command, args []string) { },
@@ -54,10 +46,6 @@ func Execute() {
 		os.Exit(1)
 	}
 
-	log.Println("Starting placeholder service...")
-	router := httprouter.New()
-	router.GET("/:width/:height", handlers.ImageHandler)
-	log.Fatal(http.ListenAndServe(":8080", router))
 }
 
 func init() {
@@ -68,10 +56,12 @@ func init() {
 	// will be global for your application.
 
 	rootCmd.PersistentFlags().StringVar(&cfgFile, "config", "", "config file (default is $HOME/.placeholder.yaml)")
+	rootCmd.PersistentFlags().StringP("author", "a", "Rasmus Schlünsen", "author name for copyright attribution")
 
 	// Cobra also supports local flags, which will only run
 	// when this action is called directly.
 	rootCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
+
 }
 
 // initConfig reads in config file and ENV variables if set.
