@@ -1,4 +1,5 @@
 # Placeholder
+[![Build Status](https://cloud.drone.io/api/badges/schlunsen/placeholder/status.svg)](https://cloud.drone.io/schlunsen/placeholder)
 
 Image placeholder service written in go
 
