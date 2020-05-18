@@ -17,7 +17,7 @@ Run the program
 ```
 # Get images using 
 # http://localhost:8080/WIDTH/HEIGHT/
-./placeholder
+./placeholder serve
 ```
 
 
