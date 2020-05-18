@@ -1,4 +1,5 @@
 # Placeholder
+[![GoDoc](https://godoc.org/github.com/schlunsen/placeholder?status.svg)](https://godoc.org/github.com/schlunsen/placeholder)
 [![Build Status](https://cloud.drone.io/api/badges/schlunsen/placeholder/status.svg)](https://cloud.drone.io/schlunsen/placeholder)
 [![Go Report Card](https://goreportcard.com/badge/github.com/schlunsen/placeholder)](https://goreportcard.com/report/github.com/schlusen/placeholder)
 
