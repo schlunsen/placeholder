@@ -9,10 +9,11 @@ import (
 
 	"github.com/anthonynsimon/bild/transform"
 	"github.com/julienschmidt/httprouter"
+	"github.com/schlunsen/placeholder/utils"
 )
 
 func ImageHandler(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
-	var imgjpg, _ = LoadImage("img/test.jpeg")
+	var imgjpg, _ = utils.LoadImage("img/test.jpeg")
 
 	width, err := strconv.Atoi(ps.ByName("width"))
 	height, err := strconv.Atoi(ps.ByName("height"))
@@ -20,7 +21,7 @@ func ImageHandler(w http.ResponseWriter, r *http.Request, ps httprouter.Params) 
 	if err != nil {
 		fmt.Println("HEST")
 	}
-	ip := GetIP(r)
+	ip := utils.GetIP(r)
 
 	msg := fmt.Sprintf("Width: %v, Height: %v Ip: ‰v", width, height, ip)
 
@@ -30,6 +31,6 @@ func ImageHandler(w http.ResponseWriter, r *http.Request, ps httprouter.Params) 
 
 	var img image.Image = result
 
-	writeImage(w, &img)
+	utils.WriteImage(w, &img)
 
 }

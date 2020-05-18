@@ -34,7 +34,7 @@ func LoadImage(path string) (image.Image, error) {
 	return jpeg.Decode(file)
 }
 
-func writeImage(w http.ResponseWriter, img *image.Image) {
+func WriteImage(w http.ResponseWriter, img *image.Image) {
 
 	buffer := new(bytes.Buffer)
 	if err := jpeg.Encode(buffer, *img, nil); err != nil {
