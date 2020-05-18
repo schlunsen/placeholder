@@ -14,6 +14,7 @@ import (
 	"strconv"
 )
 
+// LoadImage  loads image from disk
 func LoadImage(path string) (image.Image, error) {
 	file, err := os.Open(path)
 	if err != nil {
@@ -29,11 +30,11 @@ func LoadImage(path string) (image.Image, error) {
 	case ".gif":
 		return gif.Decode(file)
 	default:
-		return nil, errors.New("Unkown file format.")
+		return nil, errors.New("Unknown file format")
 	}
-	return jpeg.Decode(file)
 }
 
+// WriteImage writes image to response
 func WriteImage(w http.ResponseWriter, img *image.Image) {
 
 	buffer := new(bytes.Buffer)
@@ -48,6 +49,7 @@ func WriteImage(w http.ResponseWriter, img *image.Image) {
 	}
 }
 
+// GetIP gets ip address from request
 func GetIP(r *http.Request) string {
 	forwarded := r.Header.Get("X-FORWARDED-FOR")
 	if forwarded != "" {

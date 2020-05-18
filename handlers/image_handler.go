@@ -12,6 +12,7 @@ import (
 	"github.com/schlunsen/placeholder/utils"
 )
 
+// ImageHandler for image
 func ImageHandler(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
 	var imgjpg, _ = utils.LoadImage("img/test.jpeg")
 
