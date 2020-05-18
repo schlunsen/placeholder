@@ -1,4 +1,4 @@
-# PlaceHolder
+# Placeholder
 
 Image placeholder service written in go
 
